@@ -121,16 +121,8 @@ export class Service {
     }
   }
 
-  async getFilePreview(fileId) {
-    try {
-      return this.bucket.getFilePreview(
-        config.appwriteBucketID,
-        fileId // Use the file ID to get the specific file
-      );
-    } catch (error) {
-      console.log("Error fetching file:", error);
-      return false; // Return false if there was an error
-    }
+  getFileView(fileId) {
+    return this.bucket.getFileView(config.appwriteBucketID, fileId);
   }
 }
 

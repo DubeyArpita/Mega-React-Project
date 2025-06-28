@@ -75,6 +75,7 @@ export default function PostForm({ post }) {
 
     return () => subscription.unsubscribe();
   }, [watch, slugTransform, setValue]);
+
   return (
     <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
       <div className="w-2/3 px-2">
@@ -113,7 +114,7 @@ export default function PostForm({ post }) {
         {post && (
           <div className="w-full mb-4">
             <img
-              src={appwriteService.getFilePreview(post.featuredImage)}
+              src={appwriteService.getFileView(post.featuredImage)}
               alt={post.title}
               className="rounded-lg"
             />

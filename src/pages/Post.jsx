@@ -14,6 +14,9 @@ export default function Post() {
 
   const isAuthor = post && userData ? post.userId === userData.$id : false;
 
+  // const previewUrl = appwriteService.getFilePreview(post.featuredImage);
+  // console.log("Image URL: in post page", previewUrl);
+
   useEffect(() => {
     if (slug) {
       appwriteService.getPost(slug).then((post) => {
@@ -35,15 +38,15 @@ export default function Post() {
   return post ? (
     <div className="py-8">
       <Container>
-        <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
+        <div className="inline-block relative border rounded-xl p-2 mb-4">
           <img
-            src={appwriteService.getFilePreview(post.featuredImage)}
+            src={appwriteService.getFileView(post.featuredImage)}
             alt={post.title}
-            className="rounded-xl"
+            className="w-96 h-96 object-contain rounded-xl bg-gray-100"
           />
 
           {isAuthor && (
-            <div className="absolute right-6 top-6">
+            <div className="absolute right-4 top-4 flex space-x-2">
               <Link to={`/edit-post/${post.$id}`}>
                 <Button bgColor="bg-green-500" className="mr-3">
                   Edit
