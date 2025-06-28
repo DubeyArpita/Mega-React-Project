@@ -49,8 +49,8 @@ function Login() {
           </Link>
         </p>
         {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
-        // handlesubmit ek method hai jo hook-form se aata h jisme hum apna
-        method pass karte hain - on how to handle the form submission
+        {/* // handlesubmit ek method hai jo hook-form se aata h jisme hum apna
+        method pass karte hain - on how to handle the form submission */}
         <form onSubmit={handleSubmit(login)} className="mt-8">
           <div className="space-y-5">
             <Input

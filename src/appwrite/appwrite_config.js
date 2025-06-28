@@ -1,3 +1,4 @@
+import { use } from "react";
 import config from "../config/config";
 import { Client, ID, Databases, Storage, Query } from "appwrite";
 
@@ -25,8 +26,8 @@ export class Service {
           title,
           content,
           featuredImage,
-          userId,
           status,
+          userId,
         }
       );
     } catch (error) {
@@ -122,7 +123,7 @@ export class Service {
 
   async getFilePreview(fileId) {
     try {
-      return await this.bucket.getFilePreview(
+      return this.bucket.getFilePreview(
         config.appwriteBucketID,
         fileId // Use the file ID to get the specific file
       );
