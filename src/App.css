@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+body {
+  /* A deep, dark slate background */
+  background-color: #0f172a; 
+  /* A subtle, futuristic dot grid pattern */
+  background-image: radial-gradient(circle at 1px 1px, #334155 1px, transparent 0);
+  background-size: 2rem 2rem;
+}
