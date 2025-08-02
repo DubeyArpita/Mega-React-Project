@@ -13,7 +13,7 @@ function Postcard({ $id, title, featuredImage }) {
             className="w-full rounded-xl object-cover h-40" // Added fixed height and object-cover
           />
         </div>
-        <h2 className="text-lg font-bold text-gray-800 dark:text-gray-100">
+        <h2 className="text-lg font-bold text-gray-800">
           {title}
         </h2>
       </div>
